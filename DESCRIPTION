@@ -1,17 +1,10 @@
 Package: yarraWQ
-Title: Tools to Explore Yarra River Water Quality Data
-Version: 0.0.0.9000
+Title: Yarra River Water Quality Tools
+Description: Tools to explore and visualise long-term Yarra River water 
+    quality monitoring data, including helper functions and an interactive
+    Shiny app.
 Authors@R: 
-    person(
-      given = "Ruowei",
-      family = "Li",
-      email = "rlii0141@student.monash.edu",
-      role = c("aut", "cre")
-    )
-Description: Provides cleaned Yarra River water quality data and helper
-    functions to visualise parameters (e.g. pH, temperature, turbidity)
-    over time and by site. Includes an interactive Shiny app and a vignette
-    demonstrating how to explore the data interactively.
+    person("Ruowei", "Li", email = "rlii0141@student.monash.edu", role = c("aut", "cre"))
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

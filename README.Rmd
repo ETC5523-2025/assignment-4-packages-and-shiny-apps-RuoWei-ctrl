@@ -33,6 +33,10 @@ Here’s how to explore the included dataset:
 ```{r example, message=FALSE, warning=FALSE, eval=FALSE}
 library(yarraWQ)
 head(yarra_wq)
+
+# filter just pH measurements
+filtered <- filter_yarra_data(yarra_wq, parameter_name = "pH")
+head(filtered)
 ```
 
 Generate a simple time-series plot for a selected water quality parameter (for example, pH):
