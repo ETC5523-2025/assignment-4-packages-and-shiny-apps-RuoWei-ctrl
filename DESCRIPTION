@@ -1,17 +1,29 @@
 Package: yarraWQ
-Title: What the Package Does (One Line, Title Case)
+Title: Tools to Explore Yarra River Water Quality Data
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person(
+      given = "Ruowei",
+      family = "Li",
+      email = "rlii0141@student.monash.edu",
+      role = c("aut", "cre")
+    )
+Description: Provides cleaned Yarra River water quality data and helper
+    functions to visualise parameters (e.g. pH, temperature, turbidity)
+    over time and by site. Includes an interactive Shiny app and a vignette
+    demonstrating how to explore the data interactively.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-Depends: 
-    R (>= 3.5)
-LazyData: true
-Imports: 
+Depends: R (>= 4.1.0)
+Imports:
     dplyr,
     ggplot2,
-    shiny
+    shiny,
+    readr,
+    janitor
+Suggests:
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr

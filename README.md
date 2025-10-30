@@ -3,10 +3,10 @@
 
 # yarraWQ
 
-<!-- badges: start -->
-<!-- badges: end -->
-
-The goal of yarraWQ is to …
+yarraWQ is an R package designed to make the Yarra River Water Quality
+dataset easy to use and explore. It provides clean, ready-to-analyze
+data, helper functions for visualization, and an interactive Shiny app
+for exploring trends in water parameters over time and across sites.
 
 ## Installation
 
@@ -16,37 +16,51 @@ You can install the development version of yarraWQ from
 ``` r
 # install.packages("pak")
 pak::pak("ETC5523-2025/assignment-4-packages-and-shiny-apps-RuoWei-ctrl")
+#>  Found  1  deps for  0/1  pkgs [⠋] Resolving ETC5523-2025/assignmen… Found  1  deps for  0/1  pkgs [⠙] Resolving ETC5523-2025/assignmen… Found  1  deps for  0/1  pkgs [⠹] Resolving ETC5523-2025/assignmen… Found  1  deps for  0/1  pkgs [⠸] Resolving ETC5523-2025/assignmen… Found  1  deps for  0/1  pkgs [⠼] Resolving ETC5523-2025/assignmen… Found  1  deps for  0/1  pkgs [⠴] Resolving ETC5523-2025/assignmen… Found  5  deps for  1/1  pkgs [⠦] Resolving standard (CRAN/BioC) p…                                                                      
+#> ℹ No downloads are needed
+#>  Installing...              ✔ 1 pkg + 46 deps: kept 46 [1.3s]
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+Here’s how to explore the included dataset:
 
 ``` r
 library(yarraWQ)
-## basic example code
+head(yarra_wq)
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+Generate a simple time-series plot for a selected water quality
+parameter (for example, pH):
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+plot_yarra_metric(parameter_name = "pH")
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
+This function allows you to quickly visualize long-term water quality
+changes in the Yarra River.
 
-You can also embed plots, for example:
+## Shiny App
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+For interactive exploration, you can launch the Shiny app:
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+``` r
+
+run_yarra_app()
+```
+
+The app allows users to:
+
+- Select a parameter and site
+
+- View corresponding time trends
+
+- Compare results across multiple monitoring stations
+
+## Data Source
+
+The dataset (`yarra_wq`) was adapted from your course-provided data file
+**yarra_wq_clean.csv**, representing long-term monitoring records of the
+Yarra River’s water quality.  
+Variables include pH, temperature, turbidity, dissolved oxygen, and
+more.

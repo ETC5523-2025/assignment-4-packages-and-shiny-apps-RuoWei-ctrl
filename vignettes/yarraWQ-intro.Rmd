@@ -1,0 +1,79 @@
+---
+title: "Introduction to yarraWQ"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to yarraWQ}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview
+
+The `yarraWQ` package provides cleaned water quality data collected from the Yarra River monitoring program in Victoria, Australia. It also includes helper functions and an interactive Shiny app to explore changes in key water quality parameters such as pH, temperature, turbidity, and dissolved oxygen over time.
+
+## Loading the package
+
+```{r}
+library(yarraWQ)
+```
+
+## Exploring the data
+
+```{r}
+head(yarra_wq)
+```
+
+The dataset `yarra_wq` contains 876 rows and 16 variables, including:
+
+-   site_id: Monitoring site ID
+
+-   name: Site name
+
+-   date, year, month: Observation date
+
+-   parameter: Parameter measured (e.g., pH, temperature)
+
+-   value: Recorded measurement
+
+-   unit_of_measurement: Measurement unit (e.g., mg/L, NTU, °C)
+
+## Visualising a parameter
+
+The function `plot_yarra_metric()` creates a simple time series plot for one chosen parameter (e.g., “pH”).
+
+```{r}
+plot_yarra_metric(parameter_name = "pH")
+```
+
+You can also filter by specific monitoring sites:
+
+```{r}
+unique(yarra_wq$name)[1:3]
+```
+
+## Interactive exploration with Shiny
+
+For a more flexible exploration, you can launch the interactive app included in the package. This app is not run while building the vignette.
+
+```{r, eval=FALSE}
+run_yarra_app()
+```
+
+The Shiny app allows users to:
+
+-   Select a parameter and site
+
+-   View corresponding trends interactively
+
+-   Compare results across multiple sites
+
+## Summary
+
+`yarraWQ` demonstrates how to turn a reproducible analysis pipeline into an R package that includes both reusable functions and an interactive interface for exploration.
