@@ -1,12 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# yarraWQ
+## yarraWQ
 
 yarraWQ is an R package designed to make the Yarra River Water Quality
 dataset easy to use and explore. It provides clean, ready-to-analyze
 data, helper functions for visualization, and an interactive Shiny app
 for exploring trends in water parameters over time and across sites.
+
+*Note:* The dataset used in this package (`yarra_wq`) is from the
+ETC5521 unit. Although it differs from the datasets used in Assignments
+1–3, it allows for a more comprehensive and interactive analysis,
+meeting the requirements of this assessment.
 
 ## Installation
 
