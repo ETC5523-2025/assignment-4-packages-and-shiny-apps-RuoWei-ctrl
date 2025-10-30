@@ -42,11 +42,15 @@ ui <- fluidPage(
       plotOutput("trendPlot"),
       hr(),
       h4("How to interpret this plot"),
-      p("The line shows how the selected parameter changes over time.",
-        "The x-axis represents the sampling date, and the y-axis is the measured value.",
-        "If you choose 'All sites', it displays an overall average trend across all monitoring locations."),
+      p("The line shows how the selected parameter changes over time.
+     The x-axis represents the sampling date, and the y-axis is the measured value.
+     If you choose 'All sites', it displays an overall average trend across all monitoring locations."),
       hr(),
-      p("Data source: yarra_wq (packaged within yarraWQ).")
+      p("Data source: yarra_wq (packaged within yarraWQ)."),
+      p("Use the selectors above to explore trends for different water quality parameters
+     and monitoring sites. The patterns you see here — such as relatively stable pH levels
+     over time or higher variability at certain sites — reflect the same conclusions
+     discussed in the analysis report.")
     )
   )
 )
