@@ -1,21 +1,20 @@
-#' Launch the Yarra River Shiny app
+#' Launch the Yarra River Water Quality Shiny App
 #'
-#' This function starts an interactive Shiny application
-#' that lets you explore Yarra River water quality data.
+#' This function opens an interactive dashboard for exploring the
+#' Yarra River water quality dataset (`yarra_wq`).
 #'
 #' The app allows you to:
-#' - choose a parameter (e.g. "pH"),
-#' - choose a monitoring site,
-#' - view a time series plot produced by `plot_yarra_metric()`.
+#' - Choose a parameter (e.g., pH, Temperature, DO)
+#' - Choose a site or view all combined
+#' - Explore how values change over time
 #'
-#' @return This function does not return anything; it launches the app.
+#' @return Launches a Shiny app; does not return a value.
+#' @export
 #'
 #' @examples
 #' if (interactive()) {
 #'   run_yarra_app()
 #' }
-#'
-#' @export
 run_yarra_app <- function() {
   app_dir <- system.file("shiny", package = "yarraWQ")
   if (app_dir == "") {

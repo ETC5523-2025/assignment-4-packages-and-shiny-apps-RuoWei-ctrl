@@ -2,28 +2,27 @@
 % Please edit documentation in R/run_yarra_app.R
 \name{run_yarra_app}
 \alias{run_yarra_app}
-\title{Launch the Yarra River Shiny app}
+\title{Launch the Yarra River Water Quality Shiny App}
 \usage{
 run_yarra_app()
 }
 \value{
-This function does not return anything; it launches the app.
+Launches a Shiny app; does not return a value.
 }
 \description{
-This function starts an interactive Shiny application
-that lets you explore Yarra River water quality data.
+This function opens an interactive dashboard for exploring the
+Yarra River water quality dataset (\code{yarra_wq}).
 }
 \details{
 The app allows you to:
 \itemize{
-\item choose a parameter (e.g. "pH"),
-\item choose a monitoring site,
-\item view a time series plot produced by \code{plot_yarra_metric()}.
+\item Choose a parameter (e.g., pH, Temperature, DO)
+\item Choose a site or view all combined
+\item Explore how values change over time
 }
 }
 \examples{
 if (interactive()) {
   run_yarra_app()
 }
-
 }
